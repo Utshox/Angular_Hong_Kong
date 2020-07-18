@@ -1,0 +1,58 @@
+<div class="container"
+     fxLayout="row"
+     fxLayout.sm="column"
+     fxLayout.xs="column"
+     fxLayoutAlign.gt-md="space-around center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+
+  <div fxFlex *ngIf="dish">
+      <mat-card >
+        <mat-card-header>
+          <mat-card-header>
+            <h3>{{dish.name | uppercase}}</h3>
+          </mat-card-header>
+        </mat-card-header>
+        <img style="padding-left: 100px" mat-card-lg-image src={{dish.image}} alt={{dish.name}}>
+        <mat-card-subtitle>
+          <h4>{{dish.description}}</h4>
+        </mat-card-subtitle>
+            <mat-card-actions style="padding-left: 100px" >
+              <button mat-raised-button >Like</button>
+              <button mat-raised-button>Share</button>
+            </mat-card-actions>
+        </mat-card>
+
+  </div>
+
+  <div fxFlex *ngIf="dish">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-header>
+          <h3><strong>Comments</strong></h3>
+        </mat-card-header>
+      </mat-card-header>
+
+      <mat-list>
+        <h4>{{dish.comments[0].comment}}</h4>
+        <p>{{dish.comments[0].rating}} Star</p>
+        <p>--{{dish.comments[0].author}} {{dish.comments[0].date | date}}</p>
+        <h4>{{dish.comments[1].comment}}</h4>
+        <p>{{dish.comments[1].rating}} Star</p>
+        <p>--{{dish.comments[1].author}} {{dish.comments[1].date | date}}</p>
+        <h4>{{dish.comments[2].comment}}</h4>
+        <p>{{dish.comments[2].rating}} Star</p>
+        <p>--{{dish.comments[2].author}} {{dish.comments[2].date | date}}</p>
+        <h4>{{dish.comments[3].comment}}</h4>
+        <p>{{dish.comments[3].rating}} Star</p>
+        <p>--{{dish.comments[3].author}} {{dish.comments[3].date | date}}</p>
+        <h4>{{dish.comments[4].comment}}</h4>
+        <p>{{dish.comments[4].rating}} Star</p>
+        <p>--{{dish.comments[4].author}} {{dish.comments[4].date | date}}</p>
+      </mat-list>
+    </mat-card>
+
+  </div>
+
+
+</div>
